@@ -1,0 +1,43 @@
+.hoverText {
+    transition: 0.35s font-weight, 0.35s color;
+    animation: bubbleAnimation 3.5s forwards infinite; /* Add infinite to make it loop */
+    animation-delay: calc(var(--animation-order) * 0.1s);
+    opacity: 0; /* Start with invisible text */
+  }
+  
+  .hoverText:hover {
+    font-weight: 900;
+    color: rgb(238, 242, 255);
+  }
+  
+  @keyframes bubbleAnimation {
+    0%, 20%, 100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    50%, 80% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* To the right */
+  .hoverText:hover + .hoverText {
+    font-weight: 500;
+    color: rgb(199, 210, 254);
+  }
+  
+  .hoverText:hover + .hoverText + .hoverText {
+    font-weight: 300;
+  }
+  
+  /* To the left */
+  .hoverText:has(+ .hoverText:hover) {
+    font-weight: 500;
+    color: rgb(199, 210, 254);
+  }
+  
+  .hoverText:has(+ .hoverText + .hoverText:hover) {
+    font-weight: 300;
+  }
+  

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Register() {
   return (
     <section className="bg-white">
@@ -5,7 +7,7 @@ export default function Register() {
         <aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
           <img
             alt=""
-            src="https://images.unsplash.com/photo-1524721696987-b9527df9e512?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            src="https://images.unsplash.com/photo-1524721696987-b9527df9e512?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
             className="absolute inset-0 h-full w-full object-cover"
           />
         </aside>
@@ -14,7 +16,6 @@ export default function Register() {
           className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
         >
           <div className="max-w-xl lg:max-w-3xl">
-
             <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
               Welcome to Blood Connect
             </h1>
@@ -101,7 +102,7 @@ export default function Register() {
                   By creating an account, you agree to our
                   <a href="#" className="text-gray-700 underline"> terms and conditions </a>
                   and
-                  <a href="#" className="text-gray-700 underline">privacy policy</a>.
+                  <a href="#" className="text-gray-700 underline"> privacy policy</a>.
                 </p>
               </div>
 
@@ -114,7 +115,9 @@ export default function Register() {
 
                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                   Already have an account?
-                  <a href="#" className="text-gray-700 underline">Log in</a>.
+                  <Link href="/auth/login" className="text-gray-700 underline">
+                     Log in
+                  </Link>.
                 </p>
               </div>
             </form>
@@ -122,5 +125,5 @@ export default function Register() {
         </main>
       </div>
     </section>
-  )
+  );
 }
